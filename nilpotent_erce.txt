@@ -1,0 +1,100 @@
+//
+//  main.c
+//  quiz
+//
+//  Created by Erce Uslu on 8.04.2020.
+//  Copyright © 2020 erce. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//190202083 Erce Uslu
+
+//Matris burada kontrol edilir. 
+int kontrol(int a[99][99], int boyut) {
+
+    for (int i = 0;i<boyut;i++) {
+
+        for (int j = 0;j<boyut;j++) {
+
+            if (a[i][j] != 0) {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main()
+
+{
+    int n,i,j;
+    printf("Matrisin boyutunu giriniz!:\n");
+    scanf("%d",&n);
+    int matris[100][100];
+
+    srand(time(NULL));
+
+    for (i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+       matris[i][j]=-10 +rand()% 19;
+        }
+    }
+    printf("Olusturulan matris:\n");
+    for (i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+       printf("%4d",matris[i][j]);
+        }
+        printf("\n");
+    }
+  int matriscarpim[100][100],a,b,k;
+
+        for(a=0; a<n; a++)
+        {
+            for(b=0; b<n; b++)
+            {
+                int toplam=0;
+                for(k=0; k<n; k++)
+                {
+                    toplam+=matris[a][k]*matris[k][b];
+                }
+              matriscarpim[a][b]=toplam;
+
+            }
+
+
+        }
+
+  printf("\n-----------------------\n");
+
+
+        for(i=0; i<n; i++)
+        {
+            for(j=0; j<n; j++)
+            {
+
+                printf("%4d", matriscarpim[i][j]);
+            }
+
+            printf("\n");
+        }
+
+
+    if (kontrol(matriscarpim, n) == 0) {
+     printf("\n");
+     printf("Matris nilpotent degildir!");
+
+    }
+    else {
+     printf("\n");
+     printf("Matris nilpotenttir!");
+    }
+
+        return 0;
+}
