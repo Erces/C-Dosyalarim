@@ -1,4 +1,7 @@
-//
+//Rastgele atanan matrisin nilpotent olup olmadıgını kontrol eden proje
+
+
+
 //  main.c
 //  quiz
 //
