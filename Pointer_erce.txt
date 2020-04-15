@@ -1,0 +1,41 @@
+//
+//  main.c
+//  quiz
+//
+//  Created by Erce Uslu on 15.04.2020.
+//  Copyright © 2020 erce. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//190202083 Erce Uslu
+//1 Yıl 365 gün aldım ornekteki gibi cikmasi icin
+
+
+void hesapla(int girilen,int *yil,int *ay,int *gun) {
+    
+    *gun = (girilen % 365)%30;
+    *ay = (girilen%365) / 30;
+    *yil = girilen / 365;
+    
+    
+    
+    
+    
+}
+
+
+
+int main()
+{
+    int giris,yill,ayy,gunn;
+    printf("Bitme süresini girin;");
+    scanf("%d", &giris);
+    hesapla(giris, &yill, &ayy, &gunn);
+    printf("******************************\n");
+    printf("%d yıl %d ay %d gün sürer\n", yill , ayy , gunn);
+    printf("******************************\n");
+    
+}
