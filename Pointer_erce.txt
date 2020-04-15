@@ -1,3 +1,6 @@
+//Bir isin kalan gün sayisinin girilip kalan zamanin yil, ay, gün seklinde belirten ve pointer kullanarak yapılmıs proje
+
+
 //
 //  main.c
 //  quiz
